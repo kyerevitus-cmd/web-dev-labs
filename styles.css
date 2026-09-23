@@ -1,3 +1,4 @@
+/* Vitus Kyeremateng - 5*/
 body {
 font-family: Tiems New Roman, sans-serif;
 color: #666;
@@ -6,4 +7,49 @@ margin: 40px auto;
 }
 h1 {
 color: #0a5488;
+}* 
+{
+  box-sizing: border-box;
+}
+
+header {
+  padding: 24px;
+  background-color: #0f9488;
+  color: white;
+  margin-bottom: 16px;
+}
+#main-nav {
+background-color: #0d3b36;
+}
+#main-nav a {
+color: white;
+text-decoration: none;
+padding: 12px;
+}
+#main-nav a:hover {
+background-color: #14b8a6;
+}
+#main-nav {
+display: flex;
+gap: 8px;
+justify-content: center;
+background-color: #0d3b36;
+}
+table {
+border-collapse: collapse;
+width: 100%;
+}
+th, td {
+padding: 10px;
+border: 1px solid #ccc;
+}
+thead {
+background-color: #e6f7f4;
+}
+input, textarea, select {
+display: block;
+width: 100%;
+max-width: 400px;
+padding: 8px;
+margin-bottom: 12px;
 }

@@ -1,0 +1,7 @@
+const zipInput = document.getElementById('zip');
+const zipPattern = /^\d{5}$/;
+
+zipInput.addEventListener('input', () => {
+  const isValidZip = zipPattern.test(zipInput.value);
+  console.log(isValidZip);
+});

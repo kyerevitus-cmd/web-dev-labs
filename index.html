@@ -7,64 +7,83 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-         <header>
-<h1>Hello, Web!</h1>
-<p>A student project for Web Development I</p>
-</header>
-<nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
-</nav>
-<main>
-<!-- your existing heading, list, link, and image go here -->
-</main>
-<table>
-<caption>My Course Schedule</caption>
-<thead>
-<tr>
-<th>Week</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4</td>
-<td>Advanced HTML</td>
-</tr>
-</tbody>
-</table>
-<form>
-<label for="name">Name</label>
-<input type="text" id="name" name="name" required>
-<label for="email">Email</label>
-<input type="email" id="email" name="email" required>
-<label for="msg">Message</label>
-<textarea id="msg" name="msg"></textarea>
-<label for="referral">How did you find this page?</label>
-<select id="referral" name="referral">
-<option value="search">Search engine</option>
-<option value="social">Social media</option>
-<option value="friend">A friend</option>
-</select>
-<button type="submit">Send</button>
-</form>
-<footer>
-<p>&copy; 2026 Vitus Kyeremateng</p>
-</footer>
-        <h2>About this Page</h2>
-        <h3>You are here, Hurray!!!!!!!!</h3>
+        <header>
+            <h1>Hello, Web!</h1>
+            <p>A student project for Web Development I</p>
+        </header>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <main>
+            <h2>About this Page</h2>
+            <h3>You are here, Hurray!!!!!!!!</h3>
             <p>This is my first HTML page for this course.</p>
             <ul>
                 <li>Python</li>
                 <li>Java Script</li>
                 <li>CSS</li>
             </ul>
-            <a href="https://Primaxgroupllc.com"></a>Primax Group LLC began in 2022 as a one-person cleaning service with a clear
-            mission — deliver reliable, high-quality cleaning in 
-            Chicago with honesty, consistency, and attention to detail.
-            We've grown through hard work and the trust of our clients,
-            officially becoming a registered LLC in 2025.
+
+            <p>
+                <a href="https://primaxgroupllc.com">Primax Group LLC</a>
+                began in 2022 as a one-person cleaning service with a clear
+                mission — deliver reliable, high-quality cleaning in
+                Chicago with honesty, consistency, and attention to detail.
+                We've grown through hard work and the trust of our clients,
+                officially becoming a registered LLC in 2025.
+            </p>
+
             <img src="photogl.jpeg.png" alt="Office cleaning">
+
+            <table>
+                <caption>My Course Schedule</caption>
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Topic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4</td>
+                        <td>Advanced HTML</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="zip">ZIP code</label>
+            <input type="text" id="zip" name="zip" pattern="^\d{5}$" required>
+            <span id="zip-error"></span>
+
+            <label for="msg">Message</label>
+            <textarea id="msg" name="msg"></textarea>
+
+            <label for="referral">How did you find this page?</label>
+            <select id="referral" name="referral">
+                <option value="search">Search engine</option>
+                <option value="social">Social media</option>
+                <option value="friend">A friend</option>
+            </select>
+
+            <button type="submit">Send</button>
+        </form>
+
+        <footer>
+            <p>&copy; 2026 Vitus Kyeremateng</p>
+        </footer>
+
+        <script src="script.js"></script>
     </body>
 </html>
