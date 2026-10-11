@@ -1,8 +1,9 @@
-<!-- Vitus Yaw Kyeremateng — Lab 6 -->
 <!DOCTYPE html>
+<!-- Vitus Yaw Kyeremateng — Lab 6 -->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My First Web Page</title>
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -19,12 +20,16 @@
         </nav>
 
         <main>
+            <button id="like-btn">Like this page</button>
+            <button id="theme-btn">Toggle dark mode</button>
+            <p id="like-count">0 likes</p>
+
             <h2>About this Page</h2>
-            <h3>You are here, Hurray!!!!!!!!</h3>
+            <h3>You are here, Hurray!</h3>
             <p>This is my first HTML page for this course.</p>
             <ul>
                 <li>Python</li>
-                <li>Java Script</li>
+                <li>JavaScript</li>
                 <li>CSS</li>
             </ul>
 
@@ -38,6 +43,11 @@
             </p>
 
             <img src="photogl.jpeg.png" alt="Office cleaning">
+
+            <div class="image-wrap">
+                <img src="photo.jpg" alt="Cleaning team at work in an office">
+                <span class="badge">New</span>
+            </div>
 
             <table>
                 <caption>My Course Schedule</caption>
@@ -55,6 +65,7 @@
                 </tbody>
             </table>
         </main>
+
         <form>
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -63,7 +74,7 @@
             <input type="email" id="email" name="email" required>
 
             <label for="zip">ZIP code</label>
-            <input type="text" id="zip" name="zip" pattern="^\d{5}$" required>
+            <input type="text" id="zip" name="zip" pattern="\d{5}" required>
             <span id="zip-error"></span>
 
             <label for="msg">Message</label>
@@ -78,15 +89,43 @@
 
             <button type="submit">Send</button>
         </form>
+
         <footer>
-        <p>&copy; 2026 Vitus Kyeremateng</p>
+            <p>&copy; 2026 Vitus Yaw Kyeremateng</p>
         </footer>
+
         <script src="script.js"></script>
-        <script src="java script"></script>
     </body>
 </html>
-<div class="image-wrap">
-<img src="photo.jpg" alt="A description of the image">
-<span class="badge">New</span>
-</div>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+styles.css
+
+css
+body.dark {
+    background-color: #111827;
+    color: #f9fafb;
+}
+
+body.dark a {
+    color: #93c5fd;
+}
+
+script.js
+
+javascript
+// Vitus Yaw Kyeremateng — Lab 6
+
+const likeBtn = document.querySelector('#like-btn');
+const likeCount = document.querySelector('#like-count');
+let likes = 0;
+
+likeBtn.addEventListener("click", function () {
+    likes = likes + 1;
+    likeCount.textContent = `${likes} likes`;
+});
+
+const themeBtn = document.querySelector('#theme-btn');
+
+themeBtn.addEventListener("click", function () {
+    document.body.classList.toggle('dark');
+});
