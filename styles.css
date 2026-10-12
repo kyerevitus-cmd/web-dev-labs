@@ -1,19 +1,20 @@
 /* Vitus Kyeremateng - Lab 7 */
-body {
-  font-family: "Times New Roman", sans-serif;
-  color: #666;
-  max-width: 600px;
-  margin: 40px auto;
-}
-
 * {
   box-sizing: border-box;
 }
 
-h1 {
-  color: #0a5488;
+body {
+  font-family: Arial, sans-serif;
+  color: #222;
+  max-width: 700px;
+  margin: 40px auto;
 }
 
+h1 {
+  color: #0f9488;
+}
+
+/* Header */
 header {
   padding: 24px;
   background-color: #0f9488;
@@ -24,6 +25,11 @@ header {
   z-index: 10;
 }
 
+header h1 {
+  color: white;
+}
+
+/* Navigation */
 #main-nav {
   display: flex;
   gap: 8px;
@@ -42,22 +48,14 @@ header {
   background-color: #14b8a6;
 }
 
-@media (max-width: 600px) {
-  #main-nav {
-    flex-direction: column;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-}
-
+/* Tables */
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   border: 1px solid #ccc;
 }
@@ -66,7 +64,10 @@ thead {
   background-color: #e6f7f4;
 }
 
-input, textarea, select {
+/* Form controls */
+input,
+textarea,
+select {
   display: block;
   width: 100%;
   max-width: 400px;
@@ -74,6 +75,7 @@ input, textarea, select {
   margin-bottom: 12px;
 }
 
+/* Image badge */
 .image-wrap {
   position: relative;
   display: inline-block;
@@ -90,24 +92,23 @@ input, textarea, select {
   z-index: 5;
 }
 
-nav {
-  display: flex;
-}
-
-@media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-  }
-}
-
-/* Mobile first equivalent */
-@media (min-width: 601px) {
-  nav {
-    flex-direction: row;
-  }
-}
-
+/* Dark mode */
 body.dark {
   background-color: #111827;
   color: #f1f5f9;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  #main-nav {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  body {
+    margin: 16px;
+  }
 }
