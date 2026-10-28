@@ -1,4 +1,7 @@
-// Vitus Kyeremateng - Lab 9
+// Vitus Kyeremateng - Lab 10
+if (localStorage.getItem("theme") === "dark") {
+document.body.classList.add("dark");
+}
 const zipInput =document.getElementById('zip'); //match your input's id
 const zipPattern = /^\d{5}$/;
 zipInput.addEventListener("input", () => {
@@ -56,17 +59,6 @@ function updateLikeDisplay() {
 const counter = createLikeCounter();
   likeBtn.addEventListener("click", counter.increment);
 }
-const LikeCounter = {
-  likes: 0,
-  increment() {
-    this.likes = this.likes + 1;
-    this.render();
-  },
-  render() {
-    likeCount.textContent = `${this.likes} likes`;
-  }
-};
-
 likeBtn.addEventListener("click", function() {
   LikeCounter.increment();
   function getGreetingAfterDelay() {
@@ -102,5 +94,38 @@ console.error(error);
 factBtn.addEventListener("click", loadFact);
 });
 });
-
-
+const LikeCounter = {
+likes: Number(localStorage.getItem("likes")) || 0,
+increment() {
+this.likes = this.likes + 1;
+localStorage.setItem("likes", this.likes);
+this.render();
+},
+render() {
+likeCount.textContent = `${this.likes} likes`;
+}
+};
+LikeCounter.render();
+themeBtn.addEventListener("click", function() {
+document.body.classList.toggle("dark");
+const isDark = document.body.classList.contains("dark");
+localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+const locationBtn = document.querySelector("#location-btn");
+const locationDisplay = document.querySelector("#location-display");
+locationBtn.addEventListener("click", function() {
+if (!("geolocation" in navigator)) {
+locationDisplay.textContent =
+"Geolocation isn't supported.";
+return;
+}
+navigator.geolocation.getCurrentPosition(function(position) {
+const lat = position.coords.latitude.toFixed(2);
+const lon = position.coords.longitude.toFixed(2);
+locationDisplay.textContent = `You're near ${lat}, ${lon}`;
+}, function(error) {
+locationDisplay.textContent =
+"Location access was denied.";
+console.warn(error);
+});
+})
