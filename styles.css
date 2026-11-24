@@ -112,3 +112,22 @@ body.dark {
     margin: 16px;
   }
 }
+body {
+  background: #ffffff;
+  color: #222222;
+}
+
+body.dark {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark a {
+  color: #8ab4ff;
+}
+
+body.dark table,
+body.dark th,
+body.dark td {
+  border-color: #666666;
+}

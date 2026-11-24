@@ -120,23 +120,6 @@ locationBtn.addEventListener("click", function () {
         console.warn(error);
     });
 });
-const LikeCounter = {
-    likes: Number(localStorage.getItem("likes")) || 0,
-    increment() {
-        this.likes = this.likes + 1;
-        localStorage.setItem("likes", this.likes.toString());
-        this.render();
-    },
-    render() {
-        likeCount.textContent = `${this.likes} likes`;
-    }
-};
-const goals = ["HTML", "CSS", "JavaScript"];
-goals.forEach(function (goal) {
-    const item = document.createElement("li");
-    item.textContent = goal;
-    goalsList.appendChild(item);
-});
 LikeCounter.likes = "five"; // This line will cause a TypeScript error because 'likes' is of type number, not string.
 const data = (await response.json());
 factDisplay.textContent = data.fact;

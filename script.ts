@@ -23,5 +23,14 @@ interface CatFact {
   fact: string;
   length: number;
 }
+const response = await fetch("https://catfact.ninja/fact");
 const data = (await response.json()) as CatFact;
-factDisplay.textContent = data.fact;
+if (factDisplay) factDisplay.textContent = data.fact;
+data.length
+function saveToLocalStorage(key: string, value: string): void {
+localStorage.setItem(key,JSON.stringify(value));
+}
+function loadFromStorage<T>(key: string): T | null {
+  const raw = localStorage.getItem(key);
+  return raw ? JSON.parse(raw) : null;
+}
